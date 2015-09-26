@@ -23,12 +23,17 @@ $(document).ready(function () {
       return (
         <div className="sidebar">
           <div className="sidebar-heading">
-            <i className="fa fa-2x fa-binoculars"></i>
-            <br />
-            <h1>Bike Spotting</h1>
+            <a href="/">
+              <i className="fa fa-2x fa-binoculars"></i>
+              <br />
+              <h1>Bike Spotting</h1>
+            </a>
           </div>
           <div className="sidebar-description">
-            <p>This is some explanation of what's happening</p>
+            <p>This is some explanation of the site</p>
+          </div>
+          <div className="sidebar-footer">
+            <p>This is where you give links to collaborators, @Twitter, #GitHub etc.</p>
           </div>
         </div>
       );

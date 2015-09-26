@@ -12,6 +12,10 @@ html, body, .app-container {
   float: left;
   width: 20%;
   min-height: 100%;
+  background-color: #ecf0f1;
+  /*-webkit-box-shadow: 5px 0px 0px 0px rgba(189,195,199,1);
+  -moz-box-shadow: 5px 0px 0px 0px rgba(189,195,199,1);
+  box-shadow: 5px 0px 0px 0px rgba(189,195,199,1);*/
 }
 
 .sidebar-heading {
@@ -20,14 +24,32 @@ html, body, .app-container {
   padding: 50px;
 }
 
-.sidebar-heading h1, .sidebar-heading i {
+.sidebar-heading a {
+  text-decoration: none;
   color: #2c3e50;
+}
+
+.sidebar-heading h1 {
+  color: #2c3e50 !important; 
+}
+
+.sidebar-heading a:hover, .sidebar-heading a:focus {
+  color: #e74c3c;
 }
 
 .sidebar-description {
   padding: 50px;
   text-align: center;
-  line-height: 20px;
+  line-height: 25px;
+  margin-bottom: 200px;
+}
+
+.sidebar-footer {
+  padding: 30px;
+  text-align: center;
+  line-height: 18px;
+  color: #95a5a6;
+  font-size: 12px;
 }
 
 .content {
