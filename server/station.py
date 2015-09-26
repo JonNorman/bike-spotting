@@ -5,9 +5,12 @@ class StationCollection(object):
 
     def __init__(self):
         self.stations = None
+        self.last_updated = None
 
     def from_xml_string(self, xml_tree_string):
         xml_tree = et.fromstring(xml_tree_string)
+        self.last_updated = xml_tree.attrib['lastUpdate']
+        
         stations = {}
         for elem in xml_tree.getchildren():
             props = elem.getchildren()
