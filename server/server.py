@@ -5,6 +5,7 @@
 from wsgiref.simple_server import make_server
 import os
 from pyramid.response import Response, FileResponse
+from pyramid.config import Configurator
 
 # http modules and station/serialization
 import requests as rq
