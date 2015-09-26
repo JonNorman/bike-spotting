@@ -6,14 +6,29 @@ $(document).ready(function () {
     render: function() {
       return (
         <div className="app-container">
-          <div className="sidebar">
-            This is a sidebar
-          </div>
+          <SideBar />
           <div className="content">
             <MapContainer lat={51.509746} lng={-0.118346} />
             <div className="graph-container">
               This is where the graph will live
             </div>
+          </div>
+        </div>
+      );
+    }
+  });
+
+  var SideBar = React.createClass({
+    render: function() {
+      return (
+        <div className="sidebar">
+          <div className="sidebar-heading">
+            <i className="fa fa-2x fa-binoculars"></i>
+            <br />
+            <h1>Bike Spotting</h1>
+          </div>
+          <div className="sidebar-description">
+            <p>This is some explanation of what's happening</p>
           </div>
         </div>
       );
@@ -66,18 +81,34 @@ $(document).ready(function () {
     drawStations: function () {
       var _this = this;
 
-      console.log(this.state.data);
+      var biggestStation = 0;
+      Object.keys(this.state.data).forEach(function (k) {
+        var d = _this.state.data[k];
+
+        if (parseInt(d.nbDocks) > biggestStation) {
+          biggestStation = d.nbDocks;
+        }
+      })
 
       Object.keys(this.state.data).forEach(function (k) {
+        var d = _this.state.data[k];
+
+        var markerScalar = 16 * (d.nbDocks/biggestStation)
+        var strokeColor = "#2c3e50";
+        var fillColor = "#e74c3c";
+        var strokeWeight = 2;
+
         var marker = new google.maps.Marker({
-          position: { lat: parseFloat(_this.state.data[k].lat), lng: parseFloat(_this.state.data[k].long) },
+          position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
           map: _this.state.map,
           title: 'Hello World!',
           icon: {
             path: google.maps.SymbolPath.CIRCLE,
-            scale: 4,
-            strokeWeight: 4,
-            strokeColor: "#34495e"
+            scale: markerScalar,
+            strokeWeight: strokeWeight,
+            strokeColor: strokeColor,
+            fillColor: fillColor,
+            fillOpacity: 1-(d.nbEmptyDocks/d.nbDocks)
           }
         });
       })
