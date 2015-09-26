@@ -4,6 +4,8 @@
 # pyramid modules
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
+import os
+cwd = os.path.dirname(os.path.abspath(__file__))
 
 if __name__ == "__main__":
     config = Configurator()
@@ -11,7 +13,7 @@ if __name__ == "__main__":
     config.add_route("index", "/")
     config.add_route("bikes", "/bikes")
     config.scan()
-    config.add_static_view(name='', path=os.path.join(cwd, 'public'))
+    config.add_static_view(name='static', path=os.path.join(cwd, 'static'))
     app = config.make_wsgi_app()
 
     # start the server
