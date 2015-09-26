@@ -11,6 +11,8 @@ from pyramid.config import Configurator
 import requests as rq
 import station
 
+cwd = os.path.dirname(os.path.abspath(__file__))
+
 def bikes(request):
     """
     defines the response when directing to the "bikes" route.
@@ -26,15 +28,16 @@ def bikes(request):
     return Response(stations.to_json())
 
 def index(request):
-    return FileResponse(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'views/index.html'))
+    return FileResponse(os.path.join(cwd, 'views/index.html'))
 
 if __name__ == "__main__":
     config = Configurator()
+    # add the routes and views
     config.add_route("index", "/")
     config.add_view(index, route_name="index")
-    # add the routes and views
     config.add_route("bikes", "/bikes")
     config.add_view(bikes, route_name="bikes")
+    config.add_static_view(name='', path=os.path.join(cwd, 'public'))
     app = config.make_wsgi_app()
 
     # start the server
