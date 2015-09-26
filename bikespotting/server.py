@@ -5,7 +5,7 @@
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.response import Response
-from views import index, bikes
+import views
 import os
 cwd = os.path.dirname(os.path.abspath(__file__))
 print cwd
@@ -17,10 +17,9 @@ if __name__ == "__main__":
     config = Configurator()
     # add the routes and views
     config.add_route("index", "/")
-    config.add_view(index, route_name='index')
     config.add_route("bikes", "/bikes")
-    config.add_view(bikes, route_name='bikes')
     config.add_static_view(name='static', path='static')
+    config.scan(views)
     app = config.make_wsgi_app()
 
     # start the server
