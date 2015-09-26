@@ -50,6 +50,9 @@ coverage.xml
 # Django stuff:
 *.log
 
+# Virtual Env / Pyramid setup
+venv
+
 # Sphinx documentation
 docs/_build/
 
