@@ -39,4 +39,5 @@ if __name__ == "__main__":
 
     # start the server
     server = make_server("0.0.0.0", 8080, app)
+    print "[bike-spotting] server running on :%d" % 8080
     server.serve_forever()
