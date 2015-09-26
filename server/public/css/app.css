@@ -1,0 +1,28 @@
+
+html, body, .app-container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar {
+  float: left;
+  width: 20%;
+  background: #ccc;
+  min-height: 100%;
+}
+
+.content {
+  float: left;
+  width: 80%;
+  min-height: 100%;
+}
+
+.map-container {
+  min-height: 600px;
+}
+
+.graph-container {
+  min-height: 25%;
+}
