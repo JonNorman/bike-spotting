@@ -4,13 +4,30 @@ html, body, .app-container {
   padding: 0;
   height: 100%;
   width: 100%;
+
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .sidebar {
   float: left;
   width: 20%;
-  background: #ccc;
   min-height: 100%;
+}
+
+.sidebar-heading {
+  margin-top: 30px;
+  text-align: center;
+  padding: 50px;
+}
+
+.sidebar-heading h1, .sidebar-heading i {
+  color: #2c3e50;
+}
+
+.sidebar-description {
+  padding: 50px;
+  text-align: center;
+  line-height: 20px;
 }
 
 .content {
