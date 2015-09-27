@@ -10,7 +10,7 @@ $(document).ready(function () {
           <div className="content">
             <MapContainer lat={51.509746} lng={-0.118346} />
             <div className="graph-container">
-              This is where the graph will live
+              Insert nice D3 graph here to chart the progress throughout the day
             </div>
           </div>
         </div>
@@ -30,10 +30,24 @@ $(document).ready(function () {
             </a>
           </div>
           <div className="sidebar-description">
-            <p>This is some explanation of the site</p>
+            <p>Sit back and watch a real time locking and docking of Santander cycles as they exit and leave the stations around London.
+            </p>
           </div>
           <div className="sidebar-footer">
-            <p>This is where you give links to collaborators, @Twitter, #GitHub etc.</p>
+            <p>This viz was made by the following people
+              <ul>
+                <li>Jon Norman<br />
+                <a href src="https://twitter.com/normanjon">@NormanJon</a><br />
+                <a href src="https://github.com/JonNorman">#JonNorman</a>)</li>
+                <li>Matt Schofield<br />
+                <a href src="https://twitter.com/_mattsch">@_mattsch</a><br />
+                <a href src="https://github.com/mattschofield">#mattschofield</a></li>
+                <li>Karl Barker<br />
+                <a href src="https://twitter.com/thoughtress">@thoughtress</a><br />
+                <a href src="https://github.com/tomtkarl">#tomtkarl</a></li>
+              </ul>
+                and the code can be found <a href src="https://github.com/JonNorman/bike-spotting">here</a>.
+            </p>
           </div>
         </div>
       );

@@ -7,6 +7,8 @@ from pyramid.config import Configurator
 from pyramid.response import Response
 import views
 import os
+from crawler import Crawler
+
 cwd = os.path.dirname(os.path.abspath(__file__))
 print cwd
 
@@ -22,7 +24,11 @@ if __name__ == "__main__":
     config.scan(views)
     app = config.make_wsgi_app()
 
-    # start the server
+    # start the server and the crawler
     server = make_server("0.0.0.0", 8080, app)
+    crawler = Crawler()
+    crawler.setup("https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml", 30)
+    crawler.start()
+
     print "[bike-spotting] server running on :%d" % 8080
     server.serve_forever()
