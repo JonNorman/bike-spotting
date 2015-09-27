@@ -8,6 +8,8 @@ from crawler import Crawler
 
 cwd = os.path.dirname(os.path.abspath(__file__))
 crawler = Crawler()
+crawler.setup("https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml", 30)
+crawler.start()
 
 @view_config(route_name='index')
 def index(request):
