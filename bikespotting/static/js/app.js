@@ -36,17 +36,11 @@ $(document).ready(function () {
           <div className="sidebar-footer">
             <p>This viz was made by the following people
               <ul>
-                <li>Jon Norman<br />
-                <a href src="https://twitter.com/normanjon">@NormanJon</a><br />
-                <a href src="https://github.com/JonNorman">#JonNorman</a>)</li>
-                <li>Matt Schofield<br />
-                <a href src="https://twitter.com/_mattsch">@_mattsch</a><br />
-                <a href src="https://github.com/mattschofield">#mattschofield</a></li>
-                <li>Karl Barker<br />
-                <a href src="https://twitter.com/thoughtress">@thoughtress</a><br />
-                <a href src="https://github.com/tomtkarl">#tomtkarl</a></li>
+                <li><a href="https://github.com/JonNorman">Jon Norman</a></li>
+                <li><a href="https://github.com/mattschofield">Matt Schofield</a></li>
+                <li><a href="https://github.com/tomtkarl">Karl Barker</a></li>
               </ul>
-                and the code can be found <a href src="https://github.com/JonNorman/bike-spotting">here</a>.
+                and the code can be found <a href="https://github.com/JonNorman/bike-spotting">here</a>.
             </p>
           </div>
         </div>
