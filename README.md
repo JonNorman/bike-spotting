@@ -6,6 +6,6 @@ By using the [Santander Cycles API](https://tfl.gov.uk/tfl/syndication/feeds/cyc
 
 ## Features to add
 1. Interpolated locking and dockings such that the feed appears more "real time".
-2. Real time "bursts" on each station when a bike is docked or locked.
+2. A pretty "burst" effect on each station when a bike is docked or locked (event determines colour).
 3. A basic D3 line graph to show the net bike usage throughout the day
 4. A playback feature that will play a sped-up day's worth of locks and docks.
